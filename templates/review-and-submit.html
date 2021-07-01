@@ -1,0 +1,85 @@
+{% for c in contact %}
+    <h4>Your contact details:</h4>
+    <p>Phone number: {{ c.phone }}</p>
+    <p>Email address: {{ c.email }}</p>
+    <p>Preferred mean of contact by phone: {{ c.cbp }}</p>
+    <p>Preferred mean of contact by email: {{ c.cbe }}</p>
+    <p>Form creation date (for reference only): {{ c.date }} </p>
+{#    <p>Form creation time (for reference only): {{ c.time }} </p>#}
+    <button class="button1"><a href="{% url 'update-contact-details' pk=user.pk  %}">Update</a></button>
+{% endfor %}
+<br>
+{% for x in client %}
+    <h4>Your personal details:</h4>
+    <p>Your full name (names): {{ x.name }}</p>
+    <p>Your surname: {{ x.surname }}</p>
+    <p>Date of birth: {{ x.date_of_birth }}</p>
+    <p>Place of birth: {{ x.place_of_birth }}</p>
+    <p>Date of marriage: {{ x.date_of_mariage }}</p>
+    <p>Place of marriage: {{ x.place_of_mariage }} </p>
+    <button class="button1"><a href="{% url 'update-client-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+<br>
+{% for f in father %}
+    <h4>Your father's details:</h4>
+    <p>Fathers name: {{ f.name }}</p>
+    <p>Fathers surname: {{ f.surname }}</p>
+    <p>Date of birth: {{ f.date_of_birth }}</p>
+    <p>Place of birth: {{ f.place_of_birth }}</p>
+    <p>Date of marriage: {{ f.date_of_mariage }}</p>
+    <p>Place of marriage: {{ f.place_of_mariage }} </p>
+    <p>Army service: {{ f.military_service }} </p>
+    <p>Father's occupation before 1951?: {{ x.occupation_before_51 }} </p>
+    <button class="button1"><a href="{% url 'update-father-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+<br>
+{% for m in mother %}
+    <h4>Your mother's details:</h4>
+    <p>Mothers name: {{ m.name }}</p>
+    <p>Mothers surname: {{ m.surname }}</p>
+    <p>Date of birth: {{ m.date_of_birth }}</p>
+    <p>Place of birth: {{ m.place_of_birth }}</p>
+    <p>Date of marriage: {{ m.date_of_mariage }}</p>
+    <p>Place of marriage: {{ m.place_of_mariage }} </p>
+    <p>Your mother maiden name: {{ m.maiden_name }} </p>
+    <button class="button1"><a href="{% url 'update-mother-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+<br>
+{% for s in service %}
+    <h4>Service type you are interested in::</h4>
+    <p>Citizenship acquisition: {{ s.citizenship }}</p>
+    <p>Citizenship research: {{ s.research }}</p>
+    <p>Citizenship by grant: {{ s.grant }}</p>
+    <p>Eligibility check: {{ s.eligibility }}</p>
+    <p>Additional comments: {{ s.comment }}</p>
+    <button class="button1"><a href="{% url 'update-service-details' pk=user.pk  %}">Update</a> </button>
+{% endfor %}
+<br>
+{% for a in case %}
+    <h4>Additional info to your case:</h4>
+    <p>Description of your case: {{ a.free_text }}</p>
+    <p>Name and surname of last know relative that lived in Poland: {{ a.q1_last_relative_left_poland }}</p>
+    <p>Where did this last relative lived afterwards?: {{ a.q2_next_destination }}</p>
+    <p>Do you hold additional citizenships? If yes, which ones?: {{ a.q3_other_citizenships }}</p>
+    <p>Did your grandfather served in any army?: {{ a.q4_granfather_army  }}</p>
+    <p>What was your grandfather profession: {{ a.q5_grandfather_profession }}</p>
+    <p>Any remaining relatives still live in Poland?: {{ a.q6_family_in_poland }}</p>
+    <p>Please list all related documents that you have: {{ a.q7_polish_docs }}</p>
+    <p>Were you adopted?: {{ a.q8_addoption }}</p>
+    <button class="button1"><a href="{% url 'update-case-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+<br>
+{% for p in support %}
+    <h4>Your support person will be:</h4>
+    <p>Barbara: {{ p.sup1 }}</p>
+    <p>Dorota: {{ p.sup2 }}</p>
+    <p>Marta: {{ p.sup3 }}</p>
+    <button class="button1"><a href="{% url 'update-support-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+<br>
+<br>
+<br>
+<button class="button"><a href="{% url 'home' %}">Home</a> </button>
+<br>
+<br>
+<button class="button1"><a href="{% url 'send-email'%}">Send enquiry!</a> </button>

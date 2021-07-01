@@ -1,0 +1,84 @@
+<style>
+.button {
+  background-color: white;
+  border: 2px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: darkslateblue;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 4pxpx solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: lightblue;
+  color: white;
+}
+
+.button2 {
+  background-color: wheat;
+  color: black;
+  border: 4pxpx solid #4CAF50;
+}
+
+.button2:hover {
+  background-color: green;
+  color: darkslategray;
+}
+</style>
+
+<h4>Fill in this quick step-bystep form to give us better understanding of your case</h4>
+
+<li>
+    <ul>
+        <p>Step 1:</p>
+        <button class="button1" style=".button"><a href="{% url 'basic_contact' %}">Add your basic contact details</a> </button>
+{#        <button class="button1"><a href="{% url 'update-contact-details' pk=user.pk  %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 2:</p>
+        <button class="button1"><a href="{% url 'client-details' %}">Add your personal details</a> </button>
+{#        <button class="button1"><a href="{% url 'update-client-details' pk=user.pk %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 3:</p>
+        <button class="button1"><a href="{% url 'father-details' %}">Add your father's details</a> </button>
+{#        <button class="button1"><a href="{% url 'update-father-details' pk=user.pk %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 4:</p>
+        <button class="button1"><a href="{% url 'mother-details' %}">Add your mother's details</a> </button>
+{#        <button class="button1"><a href="{% url 'update-mother-details' pk=user.pk %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 5:</p>
+        <button class="button1"><a href="{% url 'service-details' %}">What service are interested in?</a> </button>
+{#        <button class="button1"><a href="{% url 'update-service-details' pk=user.pk  %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 6:</p>
+        <button class="button1"><a href="{% url 'case-details' %}">Provide us some more info about your case</a></button>
+{#        <button class="button1"><a href="{% url 'update-case-details' pk=user.pk %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <p>Step 7:</p>
+        <button class="button1"><a href="{% url 'support-details' %}">Select who was your contact person</a> </button>
+{#        <button class="button1"><a href="{% url 'update-support-details' pk=user.pk %}">Update</a> </button>#}
+    </ul>
+    <ul>
+        <br>
+        <br>
+        <p>All done?</p>
+        <p>After hitting this button we will get your request and will contact you to speak about your case!</p>
+        <button class="button2"><a href="{% url 'review-and-submit' pk=user.pk %}">Submit and review!</button>
+    </ul>
+</li>
+

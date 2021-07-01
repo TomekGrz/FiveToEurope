@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FiveToEurope</title>
+    <h1>Welcome to FiveToEurope family tree request form!</h1>
+</head>
+<body>
+<style>
+.button {
+  background-color: white;
+  border: 2px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: darkslateblue;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 4pxpx solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: lightblue;
+  color: white;
+}
+</style>
+{% if user.is_authenticated %}
+<p>You are logged in as {{ user.username }}</p>
+{% endif %}
+<div class="navigation">
+
+    {% if request.user.is_authenticated %}
+        <button class="button1"><a href="{% url 'logout' %}">Logout</a> </button>
+        <button class="button1"><a href="{% url 'password_change' %}">Change Password</a> </button>
+        <button class="button1"><a href="{% url 'password_reset' %}">Reset Password</a> </button>
+
+    {% include 'buttons.html' %}
+
+    {% else %}
+    {% include 'profile.html' %}
+    {% endif %}
+
+</div>
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
+

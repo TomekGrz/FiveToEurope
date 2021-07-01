@@ -1,0 +1,10 @@
+{% block content %}
+    <p>Please provide us some about your mother:</p>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save and continue to the next step">
+        <button class="button"><a href="{% url 'home' %}">Home</a> </button>
+    </form>
+{% endblock  %}

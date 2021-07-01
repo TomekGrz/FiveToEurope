@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A new contact form!</title>
+  </head>
+  <body>
+{% for x in client %}
+    <h4>Your personal details:</h4>
+    <p>Your full name (names): {{ x.name }}</p>
+    <p>Your surname: {{ x.surname }}</p>
+    <p>Date of birth: {{ x.date_of_birth }}</p>
+    <p>Place of birth: {{ x.place_of_birth }}</p>
+    <p>Date of marriage: {{ x.date_of_mariage }}</p>
+    <p>Place of marriage: {{ x.place_of_mariage }} </p>
+    <button class="button1"><a href="{% url 'update-client-details' pk=user.pk %}">Update</a> </button>
+{% endfor %}
+  </body>
+</html>
